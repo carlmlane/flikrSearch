@@ -1,0 +1,26 @@
+{
+  "name": "flikr-search",
+  "version": "0.0.0",
+  "authors": [
+    "Carl Lane <carlmlane@gmail.com>"
+  ],
+  "description": "searches flickr for a specified term",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "angular-material": "~0.8.1",
+    "angular-animate": "~1.3.14",
+    "angular-aria": "~1.3.14",
+    "hammer.js": "~2.0.4"
+  },
+  "resolutions": {
+    "angular-material": "master"
+  }
+}
