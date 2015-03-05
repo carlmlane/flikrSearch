@@ -32,7 +32,7 @@
         </form>
 
         <div layout="row" flex>
-            <div layout="row" flex layout-wrap layout-align="center" layout-fill>
+            <div layout="row" flex layout-wrap layout-align="center center" layout-fill>
                 <md-card ng-repeat="picture in results.photos.photo" class="card">
                     <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_m.jpg"
                          alt=""/>

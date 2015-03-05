@@ -34,11 +34,12 @@ md-card{
     text-overflow: hidden;
     text-align: bottom;
     vertical-align: bottom;
+    word-wrap: break-word;
 }
 
 .textContainer {
     display: table-row;
-    height: 100%;
+    max-width: 240px;
     overflow: hidden;
     text-overflow: clip;
 
