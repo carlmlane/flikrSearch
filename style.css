@@ -8,5 +8,38 @@ md-input-container.long > input {
     width: 100%;
 }
 md-card{
-    margin: 0px 30px 25px 30px;
+    margin: 5px 5px 5px 5px;
+
+}
+
+.card {
+    display: table;
+    height: 300px;
+    overflow: hidden;
+    text-overflow: hidden;
+    max-width: 240px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: table-row;
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.card h3 {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: hidden;
+    text-align: bottom;
+    vertical-align: bottom;
+}
+
+.textContainer {
+    display: table-row;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+
 }

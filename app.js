@@ -3,15 +3,16 @@
 
     angular.module('flickrSearch', ['ngMaterial'])
         .config(function($mdThemingProvider) {
-           $mdThemingProvider.theme('default')
-               .primaryPalette('orange')
-               .accentPalette('yellow');
+            $mdThemingProvider.theme('default')
+                .primaryPalette('orange')
+                .accentPalette('yellow');
         })
         .controller('ListController', ['$scope', '$http', function($scope, $http){
 
             $scope.results = [];
 
             $scope.isSearching = false;
+
 
             $scope.search = function() {
 
