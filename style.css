@@ -1,46 +1,111 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+    md-card {
+        margin: 3px 3px 3px 3px;
+
+    }
+
+    .card {
+        display: table;
+        height: auto;
+        overflow: hidden;
+        max-width: 200px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        display: table-row;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .card h3 {
+        display: table-cell;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+        word-wrap: break-word;
+        max-width: 200px;
+        font-size: .77em
+    }
+
+    .textContainer {
+        display: table-row;
+        max-width: 200px;
+        overflow: hidden;
+        height: auto;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width: 1025px) {
+
+    md-card {
+        margin: 5px 5px 5px 5px;
+
+    }
+
+    .card {
+        display: table;
+        height: 300px;
+        overflow: hidden;
+        max-width: 240px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        display: table-row;
+        max-width: 240px;
+        max-height: 240px;
+    }
+
+    .card h3 {
+        display: table-cell;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+        word-wrap: break-word;
+        max-width: 240px;
+    }
+
+    .textContainer {
+        display: table-row;
+        max-width: 240px;
+        overflow: hidden;
+    }
+}
+
 .app-content {
     width: 100%;
+    overflow: scroll;
 }
-form {
-    padding: 10px 30px 20px 25px;
-}
+
 md-input-container.long > input {
     width: 100%;
 }
-md-card{
-    margin: 5px 5px 5px 5px;
 
+form {
+    padding: 0 50px 0 40px;
 }
 
-.card {
-    display: table;
-    height: 300px;
-    overflow: hidden;
-    text-overflow: hidden;
-    max-width: 240px;
+.search-params {
+    min-height: 30px;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    display: table-row;
-    max-width: 240px;
-    max-height: 240px;
-}
-
-.card h3 {
-    display: table-cell;
-    overflow: hidden;
-    text-overflow: hidden;
-    text-align: bottom;
-    vertical-align: bottom;
-    word-wrap: break-word;
-}
-
-.textContainer {
-    display: table-row;
-    max-width: 240px;
-    overflow: hidden;
-    text-overflow: clip;
-
+.param-description {
+    font-size: .62em;
+    min-height: 20px;
 }

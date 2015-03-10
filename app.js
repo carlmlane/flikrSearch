@@ -5,14 +5,38 @@
         .config(function($mdThemingProvider) {
             $mdThemingProvider.theme('default')
                 .primaryPalette('orange')
-                .accentPalette('yellow');
+                .accentPalette('light-blue');
         })
-        .controller('ListController', ['$scope', '$http', function($scope, $http){
+        .controller('ListController', ['$scope', '$http', '$window', function ($scope, $http, $window) {
 
             $scope.results = [];
 
             $scope.isSearching = false;
 
+            var dateRestriction = function () {
+                var dt = new Date();
+                if ($scope.dateResults == "month") {
+                    dt.setMonth(dt.getMonth() - 1);
+                    return dt;
+                }
+                else if ($scope.dateResults == "halfYear") {
+                    dt.setMonth(dt.getMonth() - 6);
+                    return dt;
+                }
+                else if ($scope.dateResults == "year") {
+                    dt.setMonth(dt.getMonth() - 12);
+                    return dt;
+                }
+                else if ($scope.dateResults == "any") {
+                    dt.setFullYear(dt.getFullYear() - 100);
+                    return dt;
+                }
+            };
+
+            $scope.expandMode = function (i) {
+                var picture = $scope.results.photos.photo[i];
+                $window.open("https://farm" + picture.farm + ".staticflickr.com/" + picture.server + "/" + picture.id + "_" + picture.secret + "_b.jpg")
+            };
 
             $scope.search = function() {
 
@@ -26,7 +50,11 @@
                         api_key: '092d451058f0008113e5bce02063bd2b',
                         text: $scope.searchTerm,
                         format: 'json',
-                        nojsoncallback: 1
+                        nojsoncallback: 1,
+                        per_page: $scope.numResults,
+                        min_upload_date: dateRestriction(),
+                        sort: 'interestingness-desc',
+                        safe_search: $scope.safeSearch
                     }
                 }).success(function(data){
 
@@ -36,9 +64,10 @@
                 }).error(function(error){
                     console.error(error);
                     $scope.isSearching = false;
-                });
+                })
 
             };
+
 
         }]);
 
