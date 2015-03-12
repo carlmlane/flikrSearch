@@ -92,7 +92,6 @@ and (min-width: 1025px) {
 
 .app-content {
     width: 100%;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -106,7 +105,8 @@ form {
 
 .search-params {
     height: 30px;
-    overflow-y: hidden;
+    padding-bottom: 7px;
+    overflow: hidden;
 }
 
 md-card {
@@ -119,8 +119,4 @@ md-card:hover {
 
 [ng-click], [md-card] {
     cursor: pointer;
-}
-
-form {
-    overflow-y: hidden;
 }
