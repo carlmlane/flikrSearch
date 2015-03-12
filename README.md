@@ -1,9 +1,12 @@
 # flickrSearch
-a reponsive flickr search tool using angular, material, aria, animate, and hammer.js
+a reponsive flickr search tool using angular and material design
 
 ## TODO
 
-1. set search parameters
-2. expand on click
-3. clean up alignment and css
+1. center progress load indicator
+
+
+-consider masonry layout to optimize screen real estate
+-moving search bar into fixed toolbar and scrolling content underneath
+
 
