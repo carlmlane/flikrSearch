@@ -106,6 +106,7 @@ form {
 
 .search-params {
     height: 30px;
+    overflow-x: hidden;
 }
 
 md-card {
