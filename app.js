@@ -4,7 +4,7 @@
     angular.module('flickrSearch', ['ngMaterial'])
         .config(function($mdThemingProvider) {
             $mdThemingProvider.theme('default')
-                .primaryPalette('orange')
+                .primaryPalette('blue-grey')
                 .accentPalette('light-blue');
         })
         .controller('ListController', ['$scope', '$http', '$window', function ($scope, $http, $window) {
@@ -12,6 +12,9 @@
             $scope.results = [];
 
             $scope.isSearching = false;
+
+            // TODO reformat this input
+            // this function takes parameters for date range
 
             var dateRestriction = function () {
                 var dt = new Date();
@@ -33,10 +36,14 @@
                 }
             };
 
+            // opens larger resolution image in a new browser window
+
             $scope.expandMode = function (i) {
                 var picture = $scope.results.photos.photo[i];
                 $window.open("https://farm" + picture.farm + ".staticflickr.com/" + picture.server + "/" + picture.id + "_" + picture.secret + "_b.jpg")
             };
+
+            // flickr API search parameters
 
             $scope.search = function() {
 

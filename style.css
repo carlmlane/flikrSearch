@@ -1,7 +1,7 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width: 320px)
-and (max-device-width: 480px) {
+and (max-device-width: 767px) {
 
     md-card {
         margin: 3px 3px 3px 3px;
@@ -41,6 +41,7 @@ and (max-device-width: 480px) {
     }
 }
 
+/* TODO iPad media queries */
 /* iPads (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width: 768px)
@@ -59,7 +60,8 @@ and (min-width: 1025px) {
 
     .card {
         display: table;
-        height: 300px;
+        min-height: 240px;
+        max-height: 300px;
         overflow: hidden;
         max-width: 240px;
     }
@@ -90,7 +92,8 @@ and (min-width: 1025px) {
 
 .app-content {
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 md-input-container.long > input {
@@ -105,7 +108,14 @@ form {
     min-height: 30px;
 }
 
-.param-description {
-    font-size: .62em;
-    min-height: 20px;
+md-card {
+    text-align: center;
+}
+
+md-card:hover {
+    background-color: #607D8B;
+}
+
+[ng-click], [md-card] {
+    cursor: pointer;
 }

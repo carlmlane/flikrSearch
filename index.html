@@ -6,16 +6,20 @@
     <title>Flickr Search</title>
     <link rel="stylesheet" href="lib/angular-material/angular-material.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic"/>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic' rel='stylesheet'
+          type='text/css'>
 </head>
 <body ng-app="flickrSearch" ng-controller="ListController" layout="column" layout-align="top center">
-
+<!-- navigation container -->
 <md-toolbar>
     <div class="md-toolbar-tools">
         <span class="md-flex">Flickr Search</span>
     </div>
 </md-toolbar>
 
+<!--end navigation-->
+
+<!--begin app content-->
 
 <md-content layout="column" layout-align="center center">
     <div class="app-content">
@@ -53,15 +57,16 @@
                 </md-input-container>
             </div>
             <md-progress-circular ng-if="isSearching" md-mode="indeterminate"
-                                  layout-align="center"></md-progress-circular>
+                                  layout-align="center center"></md-progress-circular>
         </form>
 
 
         <div layout="row" flex>
             <div layout="row" flex layout-wrap layout-align="center center" layout-fill>
-                <md-card ng-repeat="picture in results.photos.photo" class="card">
-                    <img ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_m.jpg"
-                         alt="" ng-click="expandMode($index)"/>
+                <md-card ng-repeat="picture in results.photos.photo" class="card" ng-click="expandMode($index)">
+                    <a><img
+                            ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_m.jpg"
+                            alt=""/></a>
 
                     <div class="textContainer">
                         <h3>{{picture.title | limitTo: 100}}</h3>
