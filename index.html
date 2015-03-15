@@ -21,9 +21,9 @@
 
 <!--begin app content-->
 
-<md-content layout="column" layout-align="center center">
+<md-content layout="column" layout-align="top center">
     <div class="app-content">
-
+        <!--search parameters-->
         <div class="search-params" layout="row" layout-align="space-around center">
 
             <md-select ng-model="numResults" ng-init="numResults=25" placeholder="25 Photos" class="md-accent">
@@ -47,7 +47,7 @@
             </md-select>
 
         </div>
-
+        <!--search bar and progress indicator-->
         <form ng-submit="search()">
             <div ng-show="!isSearching">
                 <md-input-container layout="column" layout-align="left" class="long">
@@ -60,19 +60,21 @@
                                   layout-align="center center"></md-progress-circular>
         </form>
 
+        <!--begin photo gallery-->
+        <div class="gallery-container" layout="column" layout-align="center center">
+            <div layout="row" flex>
+                <div layout="row" flex layout-wrap layout-align="center center" layout-fill>
+                    <md-card ng-repeat="picture in results.photos.photo" class="card" ng-click="expandMode($index)">
+                        <a><img
+                                ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_q.jpg"
+                                alt=""/></a>
 
-        <div layout="row" flex>
-            <div layout="row" flex layout-wrap layout-align="center center" layout-fill>
-                <md-card ng-repeat="picture in results.photos.photo" class="card" ng-click="expandMode($index)">
-                    <a><img
-                            ng-src="https://farm{{picture.farm}}.staticflickr.com/{{picture.server}}/{{picture.id}}_{{picture.secret}}_m.jpg"
-                            alt=""/></a>
+                        <div class="textContainer">
+                            <div class="picture-title">{{picture.title | limitTo: 100}}</h3>
+                            </div>
+                    </md-card>
 
-                    <div class="textContainer">
-                        <h3>{{picture.title | limitTo: 100}}</h3>
-                    </div>
-                </md-card>
-
+                </div>
             </div>
         </div>
 
@@ -80,7 +82,12 @@
 
 </md-content>
 
+<!--wix sdk-->
+
+<script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.42.0/js/wix.min.js"></script>
+
 <!-- vendor scripts -->
+
 <script src="lib/angular/angular.min.js"></script>
 <script src="lib/angular-aria/angular-aria.min.js"></script>
 <script src="lib/angular-animate/angular-animate.min.js"></script>
@@ -88,6 +95,7 @@
 <script src="lib/angular-material/angular-material.min.js"></script>
 
 <!-- app scripts -->
+
 <script src="app.js"></script>
 
 </body>
