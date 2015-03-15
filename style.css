@@ -23,14 +23,14 @@ and (max-device-width: 767px) {
         max-height: 200px;
     }
 
-    .card h3 {
+    .card .picture-title {
         display: table-cell;
         overflow: hidden;
         text-overflow: ellipsis;
         vertical-align: bottom;
         word-wrap: break-word;
         max-width: 200px;
-        font-size: .77em
+        font-size: .80em;
     }
 
     .textContainer {
@@ -60,32 +60,32 @@ and (min-width: 1025px) {
 
     .card {
         display: table;
-        min-height: 240px;
-        max-height: 300px;
+        min-height: 150px;
+        max-height: 180px;
         overflow: hidden;
-        max-width: 240px;
+        max-width: 150px;
     }
 
     .card img {
-        width: 100%;
         height: auto;
         display: table-row;
-        max-width: 240px;
-        max-height: 240px;
+        max-width: 150px;
+        max-height: 180px;
     }
 
-    .card h3 {
+    .card .picture-title {
         display: table-cell;
         overflow: hidden;
         text-overflow: ellipsis;
         vertical-align: bottom;
         word-wrap: break-word;
-        max-width: 240px;
+        max-width: 150px;
+        font-size: .80em;
     }
 
     .textContainer {
         display: table-row;
-        max-width: 240px;
+        max-width: 150px;
         overflow: hidden;
     }
 }
@@ -115,6 +115,24 @@ md-card {
 
 md-card:hover {
     background-color: #607D8B;
+}
+
+md-content {
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border: 1px solid;
+    border-color: transparent #CCC #CCC #CCC;
+    height: 100%;
+}
+
+.gallery-container {
+    height: 100%;
+}
+
+.picture-title {
+    font-size: .8em;
+    font-weight: 500;
 }
 
 [ng-click], [md-card] {
